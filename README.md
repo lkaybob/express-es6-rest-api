@@ -8,9 +8,7 @@ This is a straightforward boilerplate for building REST APIs with ES6 and Expres
 - CORS support via [cors](https://github.com/troygoode/node-cors)
 - Body Parsing via [body-parser](https://github.com/expressjs/body-parser)
 
-> Tip: If you are using [Mongoose](https://github.com/Automattic/mongoose), you can automatically expose your Models as REST resources using [restful-mongoose](https://git.io/restful-mongoose).
-
-
+> Optimized for relational database engine using [Sequelize](http://docs.sequelizejs.com/)
 
 Getting Started
 ---------------
@@ -32,6 +30,14 @@ PORT=8080 npm run dev
 # Start production server:
 PORT=8080 npm start
 ```
+
+Model Creation
+-----
+```sh
+# Move to src directory first
+Kaybobs-Macbook-Pro:src lkaybob$ ../node_modules/sequelize-cli/lib/sequelize model:generate --name test --attributes name:string
+```
+
 Docker Support
 ------
 ```sh
@@ -47,7 +53,7 @@ docker run -p 8080:8080 es6/api-service
 #                 ^            ^
 #          bind the port    container tag
 #          to your host
-#          machine port   
+#          machine port
 
 ```
 

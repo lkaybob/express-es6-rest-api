@@ -12,6 +12,7 @@ Vagrant.configure("2") do |config|
   # Update apt Package Manager if OS is ubuntu
   config.vm.provision "shell", inline: <<-SHELL
     apt-get update
+    apt-get install python2.7 python-pip -y
   SHELL
 
   # Provision with ansible playbook
@@ -22,3 +23,4 @@ Vagrant.configure("2") do |config|
     ansible.playbook = "provisioning/main.yml"
   end
 end
+
